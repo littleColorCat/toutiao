@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+    #set($title = "This is my first title")
+    #parse("header.vm")<br>
+Hello VM.
+
+## 你看不到我
+
+#*
+这里都看不到
+*#
+
+value:$!{value}
+$!{value2}
+${value3}
+
+
+
+
+#foreach($color in $colors)
+    Color $!{foreach.index}:${color}
+#end
+
+#foreach($kv in $map.entrySet())
+    Map $!{foreach.index} : ${kv.key} ${kv.value}
+#end
+
+
+UserName : $!{user.name}
+    User: $!{user.getName()}
+
+#set($title = "nowcoder")
+Include: #include("header.vm") <br>
+Parse:#parse("header.vm")
+
+#macro (render_color, $color, $index)
+Color By Macro $index, $color
+#end
+
+#foreach ($color in $colors)
+    #render_color($color, $foreach.index)
+#end
+
+#set($hello = "hello")
+#set($hworld1 = "$!{hello} world")
+#set($hworld2 = '$!{hello} world')
+
+hworld1:$hworld1
+hworld2:$hworld2
+
+$!{colors.size()}
+#set($font = "This is the last")
+    #parse("fonter.vm")
+</pre>
+</body>
+</html>
