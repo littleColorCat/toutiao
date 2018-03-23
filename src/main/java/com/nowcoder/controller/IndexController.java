@@ -24,7 +24,7 @@ import java.util.*;
 /**
  * Created by admin on 2018/3/13.
  */
-@Controller
+//@Controller
 public class IndexController {
 
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(IndexController.class);
